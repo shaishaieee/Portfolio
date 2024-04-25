@@ -1,0 +1,21 @@
+@use "../abstract/" as *;
+
+.btn {
+  padding: 1rem 3rem;
+  background-color: transparent;
+  border: 1px solid transparent;
+  font-size: 1rem;
+
+  &.bg--yellow {
+    @extend .btn;
+    background-color: $clr--primary;
+    color: $clr--light;
+    border-radius: 1rem;
+
+    &:hover {
+      background-color: transparent;
+      border: 1px solid $clr--primary;
+      color: $clr--primary;
+    }
+  }
+}

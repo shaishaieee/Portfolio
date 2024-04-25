@@ -1,0 +1,42 @@
+@use "../abstract/" as *;
+
+.header {
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  padding: 2rem 0;
+  box-shadow: rgba(33, 35, 38, 0.9) 0px 10px 10px -10px;
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    nav {
+      @include mediaQuery(740px) {
+        display: none;
+      }
+      ul {
+        gap: 3rem;
+        li {
+          a {
+            color: $clr--light;
+            &:hover {
+              color: $clr--primary;
+              position: relative;
+              &::before {
+                position: absolute;
+                content: " ";
+                width: 100%;
+                height: 0.2rem;
+                top: 1.3rem;
+                bottom: 0;
+                left: 0;
+                transition: all 0.3s;
+                background-color: $clr--primary;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,188 @@
+@use "../abstract/" as *;
+@use "../base/" as *;
+
+// home
+
+.home {
+  box-shadow: rgba(33, 35, 38, 0.9) 0px 10px 10px -10px;
+
+  &__wrapper {
+    @include centerAll;
+    gap: 4rem;
+    img {
+      width: 20rem;
+      margin-bottom: -0.4rem;
+    }
+  }
+  &__left {
+    h2 {
+      font-size: clamp(2rem, 6vw, 4rem);
+    }
+    p {
+      font-size: clamp(1rem, 6vw, 1.7rem);
+      max-width: 30rem;
+    }
+  }
+}
+
+// about
+
+.about {
+  box-shadow: rgba(33, 35, 38, 0.9) 0px 10px 10px -10px;
+  &__wrapper {
+    @include grid(2, 3);
+    align-items: center;
+  }
+  &__left {
+    position: relative;
+    h2 {
+      font-size: clamp(3rem, 6vw, 4rem);
+    }
+    &::after {
+      content: " ";
+      position: absolute;
+      background-color: $clr--primary;
+      height: 0.2rem;
+      width: 9rem;
+    }
+  }
+}
+
+// services
+
+.services {
+  box-shadow: rgba(33, 35, 38, 0.9) 0px 10px 10px -10px;
+  &__title {
+    h2 {
+      font-size: clamp(3rem, 6vw, 4rem);
+      position: relative;
+      &::after {
+        content: " ";
+        bottom: 0;
+        left: 11rem;
+        position: absolute;
+        background-color: $clr--primary;
+        height: 0.2rem;
+        width: 9rem;
+      }
+    }
+  }
+  &__wrapper {
+    @include grid(2, 3);
+  }
+  &__card {
+    padding: 2rem 4rem;
+    border: 2px solid $clr--primary;
+    margin: 1rem;
+
+    span {
+      font-size: 4rem;
+      color: $clr--light--gray;
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      font-size: clamp(1.2rem, 6vw, 1.5rem);
+    }
+  }
+}
+
+// experiences
+.experiences {
+  box-shadow: rgba(33, 35, 38, 0.9) 0px 10px 10px -10px;
+  &__title {
+    h2 {
+      font-size: clamp(3rem, 6vw, 4rem);
+      position: relative;
+      &::after {
+        content: " ";
+        bottom: 0;
+        left: 13rem;
+        position: absolute;
+        background-color: $clr--primary;
+        height: 0.2rem;
+        width: 9rem;
+      }
+    }
+  }
+  &__wrapper {
+    display: flex;
+  }
+  &__card {
+    border: 0.3px solid $clr--primary;
+
+    padding: 2rem 3rem;
+
+    h3 {
+      font-size: clamp(1.2rem, 6vw, 1.5rem);
+    }
+
+    small {
+      font-size: 0.7rem;
+      opacity: 0.7;
+    }
+  }
+}
+
+// contact
+.contact {
+  &__title {
+    h2 {
+      font-size: clamp(3rem, 6vw, 4rem);
+      position: relative;
+      &::after {
+        content: " ";
+        bottom: 0;
+        left: 19.5rem;
+        position: absolute;
+        background-color: $clr--primary;
+        height: 0.2rem;
+        width: 9rem;
+      }
+    }
+  }
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 25rem 1fr;
+  }
+  &__left {
+    h4 {
+      font-size: clamp(1.2rem, 6vw, 1.4rem);
+      font-weight: 600;
+    }
+    ul {
+      li {
+        color: $clr--light--gray;
+        margin-bottom: 2rem;
+        i {
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+  &__social {
+    display: flex;
+  }
+  &__right {
+    input {
+      background-color: $clr--dark--gray;
+      width: 100%;
+      border: 1px solid $clr--dark--gray;
+      outline: none;
+      padding: 1rem;
+      border-radius: 0.3rem;
+      margin-bottom: 1rem;
+      &:focus {
+        box-shadow: 0px 3px 4px 0px rgba(0, 12, 29, 0.06);
+      }
+    }
+    textarea {
+      &::placeholder {
+        font-size: 1rem;
+      }
+
+      @extend input;
+      padding-bottom: 5rem;
+    }
+  }
+}
